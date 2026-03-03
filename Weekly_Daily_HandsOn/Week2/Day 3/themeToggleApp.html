@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .dark {
+    background-color: black;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<button id="toggle">Toggle Theme</button>
+
+<script>
+  const toggle = document.getElementById("toggle");
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  toggle.addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
+</body>
+</html>

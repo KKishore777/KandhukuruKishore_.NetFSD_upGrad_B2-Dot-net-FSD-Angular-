@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="search" placeholder="Search product">
+<ul id="products"></ul>
+<p id="message"></p>
+
+<script>
+  const items = ["Laptop", "Mobile", "Mouse", "Keyboard"];
+  const search = document.getElementById("search");
+  const products = document.getElementById("products");
+  const message = document.getElementById("message");
+
+  function showProducts(list) {
+    products.innerHTML = "";
+
+    if (list.length === 0) {
+      message.textContent = "No Results Found";
+      return;
+    }
+
+    message.textContent = "";
+
+    list.forEach(function(item) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      products.appendChild(li);
+    });
+  }
+
+  search.addEventListener("input", function() {
+    const value = search.value.toLowerCase();
+
+    const filtered = items.filter(function(item) {
+      return item.toLowerCase().includes(value);
+    });
+
+    showProducts(filtered);
+  });
+
+  showProducts(items);
+</script>
+
+</body>
+</html>
