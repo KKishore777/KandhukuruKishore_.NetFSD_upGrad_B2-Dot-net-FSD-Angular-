@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+        margin:5px;
+    }
+     input, select, textarea {
+            width: 30%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+    <div>
+        <form action="">
+                <label for="">Student Name</label>
+                <input type="text" name="" id="n" placeholder="Enter Your Name"><br><br>
+                <label for="">Student Id</label>
+                <input type="number" name="" id="num" placeholder="Enter Your ID"><br><br>
+                <label for="">Student Email</label>
+                <input type="email" name="" id="email" placeholder="Enter Your Email Id"><br><br>
+                <label for="">Select One Option</label>
+            <select name="" id="">
+                <option value="">---</option>
+                <option value="Very Bad">Very Bad</option>
+                <option value="Bad">Bad</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
+            </select><br><br>
+            <label for="">Any Comments</label><br>
+                <textarea name="" id="area" maxlength="100" ></textarea><br><br>
+                <button id="vali">Submit</button>
+        </form>
+    </div><br>
+    <div id="result"></div>
+    <script>
+        $(document).ready(function(){
+          
+           $("#vali").click(function(e){
+            e.preventDefault();
+           var emai =$("#email").val();
+            var id = $("#num").val();
+            var nam =$("#n").val();
+            if(nam ==="" && id ===""&& emai ===""){
+                alert("Enter Your Name And ID And Email");
+            }
+            else{
+                $("#result").html("FeedBack SuccessFully Completed ... ")
+                $("#result").css("color","Red")
+                }
+ 
+           })
+
+        })
+    </script>
+</body>
+</html>

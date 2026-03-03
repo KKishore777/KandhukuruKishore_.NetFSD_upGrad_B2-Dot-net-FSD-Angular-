@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+            margin-right: auto;
+            margin-left: auto;
+            background-color: brown;
+            width: 70%;
+        }
+        h1{
+            color: red;
+            text-align: center;
+        }
+        .Quary{
+            font-size: 30px;
+            background-color: bisque;
+            color: black;
+            margin: 5px;
+        }
+        .answer{
+            background-color: rgb(66, 62, 55);
+            color: white;
+            margin: 5px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>FAQs For Students</h1>
+            <p class="Quary" id="Quary1">What courses are offered in the institute?</p>
+            <p class="answer" id="Quary2"></p> 
+            <p class="Quary" id="Quary3">What is the duration of the course?</p>
+            <p class="answer" id="Quary4"></p>
+            <p class="Quary" id="Quary5">Do you provide placement assistance?</p>
+            <p class="answer" id="Quary6"></p>
+            <p class="Quary" id="Quary7">Are classes conducted online or offline?</p>
+            <p class="answer" id="Quary8"></p>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function(){
+       $("#Quary1").on("click",function(){
+        $("#Quary2").slideToggle(function(){
+            $(this).text("We offer courses in Web Development, Java, Python, Data Science, and UI/UX Design.");
+        });
+       })
+       $("#Quary3").click(function(){
+        $("#Quary4").slideToggle(function(){
+            $(this).text("Course duration ranges from 2 months to 6 months depending on the program.");
+        })
+       })
+        $("#Quary5").click(function(){
+        $("#Quary6").slideToggle(function(){
+            $(this).text("Yes, we provide placement support including resume building, mock interviews, and job referrals.ourse duration ranges from 2 months to 6 months depending on the program.");
+        })
+       })
+          $("#Quary7").click(function(){
+        $("#Quary8").slideToggle(function(){
+            $(this).text("Course duraWe offer both online and offline classes for student convenience.ram.");
+        })
+       })
+    })
+</script>
+</html>
