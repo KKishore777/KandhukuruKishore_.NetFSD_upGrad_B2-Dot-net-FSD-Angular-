@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Tracker</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+           
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 8px;
+           
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 10px;
+        }
+
+        .history {
+            text-align: left;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body onload="loadHistory()">
+
+    <div class="container">
+        <h2> Location Tracker</h2>
+
+        <button onclick="getLocation()">Get My Location</button>
+
+        <div id="output"></div>
+
+        <h3>Last 5 Locations</h3>
+        <div id="history" class="history"></div>
+    </div>
+
+<script>
+
+function getLocation() {
+
+    if (!navigator.geolocation) {
+        document.getElementById("output").innerHTML =
+            "<p class='error'>Geolocation is not supported by this browser.</p>";
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        showPosition,
+        showError,
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+    );
+}
+
+function showPosition(position) {
+
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    document.getElementById("output").innerHTML =
+        "<p class='success'>Latitude: " + latitude +
+        "<br>Longitude: " + longitude + "</p>";
+
+    saveLocation(latitude, longitude);
+}
+
+function showError(error) {
+
+    var message = "";
+
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            message = "Permission denied by user.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            message = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            message = "Request timed out.";
+            break;
+        default:
+            message = "An unknown error occurred.";
+            break;
+    }
+
+    document.getElementById("output").innerHTML =
+        "<p class='error'>" + message + "</p>";
+}
+
+function saveLocation(lat, lon) {
+
+    var locations = JSON.parse(localStorage.getItem("locationHistory")) || [];
+
+    var newEntry = {
+        latitude: lat,
+        longitude: lon,
+        time: new Date().toLocaleString()
+    };
+
+    locations.unshift(newEntry);
+
+    if (locations.length > 5) {
+        locations = locations.slice(0, 5);
+    }
+
+    localStorage.setItem("locationHistory", JSON.stringify(locations));
+
+    loadHistory();
+}
+
+function loadHistory() {
+
+    var locations = JSON.parse(localStorage.getItem("locationHistory")) || [];
+    var historyDiv = document.getElementById("history");
+
+    if (locations.length === 0) {
+        historyDiv.innerHTML = "No location history found.";
+        return;
+    }
+
+    var html = "";
+
+    for (var i = 0; i < locations.length; i++) {
+        html += "<p>" +
+            "Lat: " + locations[i].latitude +
+            " | Lon: " + locations[i].longitude +
+            "<br><small>" + locations[i].time + "</small>" +
+            "</p><hr>";
+    }
+
+    historyDiv.innerHTML = html;
+}
+
+</script>
+
+</body>
+</html>
