@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KISHORE PROFILE</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: blanchedalmond;
+           
+        }
+        h1{
+            color: coral;
+            width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+        }
+        h1:hover{
+            
+            color: white;
+        }
+        #profile{
+            
+            width: 100%;
+            text-align: center;
+            
+        }
+        .link{
+            
+            text-decoration: none;
+            font-size: 20px;
+            padding: 20px;
+            color: brown;
+            
+        }
+        .link:hover{
+            
+            color:cadetblue;
+            
+        }
+        p{
+            text-align: center;
+        }
+       #progress{
+        display: flex;
+        justify-content: center;
+       } 
+       .progress1{
+        margin-right: 20px;
+        margin-right: 5px;
+        text-transform: capitalize;
+       }
+       .progress2{
+        text-transform: capitalize;
+        margin-right: 20px;
+        margin-left: 20px;
+       }
+       form{
+        text-align: center;
+       }
+     #name:hover{
+        background-color: azure;
+        color: black;
+        
+     }
+     .button{
+        background-color: brown;
+        color:black;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+     }
+    button:hover{
+        background-color: chocolate;
+        color: blanchedalmond;
+        
+    }
+    </style>
+</head>
+<body>
+    <h1>MY PROFILE</h1>
+    <div id="profile"> 
+        <a href="#About" class="link">Abous Us </a>
+        <a href="#Skills" class="link">MySkills</a>
+        <a href="#Contact" class="link">Contact</a>
+    </div>
+    <div>
+        <h1 id="About">About Us</h1>
+        <p>My Name is K.Kishore from kadapa, Andhra Pradesh. Iam Completed my graduation in SVCE with 76%. Iam looking for oppertunity to start my carrier.</p>
+    </div>
+    <h1 id="Skills">My Skills</h1>
+    <DIV id="progress">
+        <span class="progress1">frontend</span> <progress value="90" max="100" "></progress>
+        <span class="progress2">backend with java</span><progress value="85" max="100"></progress>
+    </DIV>
+    <div>
+        <h1 id="Contact">CONTACT</h1>
+        <form action="">
+            <label for="name">Name </label><br>
+            <input type="text" name="name" id="name" required placeholder="Enter Your Name"><br><br>
+
+            <label for="">Email </label><br>
+            <input type="email" name="" id="name"  placeholder="Enter Your Email"><br><br>
+
+            <label for="">Phone</label><br>
+            <input type="tel" name="" id="name" placeholder="Enter Your Number" pattern="^[6-9]\b{9}"><br><br>
+
+            <button class="button">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
