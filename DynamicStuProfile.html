@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile System</title>
+    <style>
+        #studentProfile {
+            width: 300px;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Profile</h2>
+
+    <!-- Profile Display -->
+    <div id="studentProfile"></div>
+
+    <br>
+
+    <!-- Button to update marks -->
+    <button id="updateMarksBtn">Update Marks</button>
+
+    <script>
+        // ✅ Global student object
+        let student = {
+            name: "Rahul",
+            rollNo: 101,
+            marks: 75
+        };
+
+        // Function to display student profile
+        function updateStudentProfile(studentObj) {
+            const profileDiv = document.getElementById("studentProfile");
+
+            profileDiv.innerHTML = `
+                <h3>Student Details</h3>
+                <p><strong>Name:</strong> ${studentObj.name}</p>
+                <p><strong>Roll No:</strong> ${studentObj.rollNo}</p>
+                <p><strong>Marks:</strong> ${studentObj.marks}</p>
+            `;
+        }
+
+        // Function to update marks and refresh display
+        function updateMarks(newMarks) {
+            student.marks = newMarks;     // Update global object
+            updateStudentProfile(student); // Refresh UI
+        }
+
+        // Initial display
+        updateStudentProfile(student);
+
+        // Event listener (No page refresh)
+        document.getElementById("updateMarksBtn").addEventListener("click", function() {
+            updateMarks(90);  // Passing new marks as parameter
+        });
+    </script>
+
+</body>
+</html>

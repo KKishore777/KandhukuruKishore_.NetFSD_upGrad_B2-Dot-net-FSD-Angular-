@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Greeting Generator</h1>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter Your Name :">
+        <button onclick="generateGreeting()">Generate Greeting</button>
+
+       <p id="greetingMessage"></p>
+    <script>
+        function Greeting (name){
+            return "Hello, " + name + "! Welcome to our website.";
+        }
+        function generator(){
+
+            var name = document.getElementById("name");
+            let message = Greeting(name);
+            document.getElementById("GreetingMessage").innerText=message;
+        }
+        
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Page</title>
+</head>
+<body>
+
+    <h2>Greeting Generator</h2>
+
+    <!-- Input box -->
+    <input type="text" id="username" placeholder="Enter your name">
+
+    <!-- Button -->
+    <button onclick="generateGreeting()">Generate Greeting</button>
+
+    <!-- Paragraph to display greeting -->
+    <p id="greetingMessage"></p>
+
+    <script>
+        // Function that accepts name as parameter
+        function greetUser(name) {
+            return "Hello, " + name + "! Welcome to our website.";
+        }
+
+        // Function triggered by button click
+        function generateGreeting() {
+            // Get value from input box
+            var name = document.getElementById("username").value;
+
+            // Call function and pass name as argument
+            var message = greetUser(name);
+
+            // Display result inside <p> element
+            document.getElementById("greetingMessage").innerText = message;
+        }
+    </script>
+
+</body>
+</html>
