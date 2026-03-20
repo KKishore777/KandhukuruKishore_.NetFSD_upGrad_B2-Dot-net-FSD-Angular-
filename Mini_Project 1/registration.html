@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         nav{
+            background:#8a85852a ;
+            
+            
+        }
+        body{
+            background-color: #423e3fc2;
+            
+        }
+    </style>
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-dark  shadow-sm ">
+        <div class="container mw-100">
+            <a class="navbar-brand fw-bold " href="index.html" style="color: rgba(53, 72, 134, 0.658);">Upgrad Events</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="login.html" id="nav-login">Login</a>
+                <a class="nav-link " href="events.html" id="nav-events-link">Events</a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link d-none text-warning" href="#" onclick="logout()" id="nav-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mw-100 border-secondary">
+        <h3 class="mb-3" style="color:rgb(209, 209, 173)">Event Registration</h3>
+        <div class="border border-secondary rounded-3 w-100 " style="color:rgb(209, 209, 173)">
+            
+            <p class="h5 mt-3 mx-4">Event Details</p>    
+                <div id="reg-details" class=" mb-3 mx-4">
+                    </div>
+               
+            
+        </div>
+        <div class="border border-secondary my-4 rounded-3 w-100">
+             <p class="h5 mx-4 my-3" style="color:rgb(209, 209, 173)">Participant Details</p>
+             <div class="mx-4">
+                <form id="reg-form" >
+                    <input type="text" class="form-control mb-2 " placeholder="First Name" required>
+                    <input type="text" class="form-control mb-2 " placeholder="Last Name" required>
+                    <input type="email" class="form-control mb-3 " placeholder="Email" required>
+                    <button class="btn btn-success mb-3 " type="submit" onclick="formSubmit()">Register Now</button>
+                </form>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
