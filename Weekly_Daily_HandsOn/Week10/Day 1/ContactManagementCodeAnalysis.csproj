@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	<AnalysisLevel>latest</AnalysisLevel>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\upgradall\upgradall\upgrad\repos\repos\Week10\Week10Day1\ContactManagementCodeAnalysis\ContactManagementCodeAnalysis\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\upgradall\upgradall\upgrad\repos\repos\Week10\Week10Day1\ContactManagementCodeAnalysis\ContactManagementCodeAnalysis\.editorconfig" />
+  </ItemGroup>
+
+</Project>
